@@ -1,0 +1,23 @@
+{
+  "0": {
+    "__uuid__": "e1c9c91c-5b72-4f78-b489-5db8d6c6fdc6"
+  },
+  "2": {
+    "__uuid__": "2ed13760-34ec-487b-9397-289149462371"
+  },
+  "3": null,
+  "4": null,
+  "5": null,
+  "6": null,
+  "7": null,
+  "8": null,
+  "9": null,
+  "__type__": "Runtime.SpriteAnimationAsset",
+  "_name": "drop",
+  "_objFlags": 0,
+  "_rawFiles": [
+    "drop.animation"
+  ],
+  "loop": true,
+  "delay": 0.2
+}

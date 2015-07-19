@@ -1,0 +1,25 @@
+{
+  "0": {
+    "__uuid__": "4e39f956-a488-4e94-976b-d1f0035e8dc8"
+  },
+  "2": {
+    "__uuid__": "95638c01-d1ef-4202-a524-e9d43579db32"
+  },
+  "3": {
+    "__uuid__": "8d9badf6-3461-435a-9376-87c5a054dbe2"
+  },
+  "4": null,
+  "5": null,
+  "6": null,
+  "7": null,
+  "8": null,
+  "9": null,
+  "__type__": "Runtime.SpriteAnimationAsset",
+  "_name": "run",
+  "_objFlags": 0,
+  "_rawFiles": [
+    "run.animation"
+  ],
+  "loop": true,
+  "delay": 0.2
+}

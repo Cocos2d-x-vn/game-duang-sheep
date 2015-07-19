@@ -1,0 +1,21 @@
+{
+  "0": {
+    "__uuid__": "3bf87192-ef2f-4710-8ea5-6cfcc8ad1203"
+  },
+  "2": null,
+  "3": null,
+  "4": null,
+  "5": null,
+  "6": null,
+  "7": null,
+  "8": null,
+  "9": null,
+  "__type__": "Runtime.SpriteAnimationAsset",
+  "_name": "dead",
+  "_objFlags": 0,
+  "_rawFiles": [
+    "dead.animation"
+  ],
+  "loop": true,
+  "delay": 0.2
+}

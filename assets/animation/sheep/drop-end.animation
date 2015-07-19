@@ -1,0 +1,23 @@
+{
+  "0": {
+    "__uuid__": "d8d458cd-2c5b-404f-9d9d-3e2f53f48c56"
+  },
+  "2": {
+    "__uuid__": "d3eaab30-506b-42c2-8788-7f96a8112f9a"
+  },
+  "3": null,
+  "4": null,
+  "5": null,
+  "6": null,
+  "7": null,
+  "8": null,
+  "9": null,
+  "__type__": "Runtime.SpriteAnimationAsset",
+  "_name": "drop-end",
+  "_objFlags": 0,
+  "_rawFiles": [
+    "drop-end.animation"
+  ],
+  "loop": true,
+  "delay": 0.2
+}

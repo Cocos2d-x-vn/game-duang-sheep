@@ -1,0 +1,23 @@
+{
+  "0": {
+    "__uuid__": "09d53a44-b0dd-4d67-9c65-fb53cacf64d4"
+  },
+  "2": {
+    "__uuid__": "0fb89f32-09fd-4f78-8440-1fc3e1448572"
+  },
+  "3": null,
+  "4": null,
+  "5": null,
+  "6": null,
+  "7": null,
+  "8": null,
+  "9": null,
+  "__type__": "Runtime.SpriteAnimationAsset",
+  "_name": "red",
+  "_objFlags": 0,
+  "_rawFiles": [
+    "red.animation"
+  ],
+  "loop": true,
+  "delay": 0.2
+}
