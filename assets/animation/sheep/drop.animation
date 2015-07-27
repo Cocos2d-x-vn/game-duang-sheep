@@ -1,9 +1,9 @@
 {
   "0": {
-    "__uuid__": "e1c9c91c-5b72-4f78-b489-5db8d6c6fdc6"
+    "__uuid__": "500fdf6f-146c-4928-979c-a5ff26810c02"
   },
   "2": {
-    "__uuid__": "2ed13760-34ec-487b-9397-289149462371"
+    "__uuid__": "85b2475f-a684-459c-8a2c-fcedae496455"
   },
   "3": null,
   "4": null,
@@ -18,6 +18,6 @@
   "_rawFiles": [
     "drop.animation"
   ],
-  "loop": true,
+  "loop": false,
   "delay": 0.2
 }

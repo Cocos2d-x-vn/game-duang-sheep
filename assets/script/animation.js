@@ -1,10 +1,5 @@
 var proto = {
-    constructor: function () {
-        this._current = -1;
-        this._actions = {};
-
-        this._init = false;
-    },
+    extends: Fire.Behavior,
 
     properties: {
 
@@ -15,44 +10,59 @@ var proto = {
         }
     },
 
-    play: function (name) {
+    play: function (index) {
         this.stopAllActions();
 
-        var action = this._actions[name].action;
-        var loop = this._actions[name].loop;
+        var action = this._actions[index].action;
+        var loop = this._actions[index].loop;
 
-        if (loop)
+        if (loop) {
             this.runAction( action.repeatForever() );
-        else
+        }
+        else if (this.onPlayEnd) {
+            var callback = cc.callFunc(this.onPlayEnd, this);
+            this.runAction( cc.sequence(action, callback) );
+        }
+        else {
             this.runAction( action );
+        }
+
+        this.animationIndex = index;
     },
 
-    update: function (dt) {
-        this.updateAnimation(dt);
+    onLoad: function () {
+        this._actions = {};
+
+        this._initAnimation();
     },
 
-    updateAnimation: function (dt) {
-        if (!Fire.engine.isPlaying) {
-            return;
+    _initAnimation: function () {
+        for (var i = 0; i<5; i++) {
+            ( function (name) {
+                var asset = this[name];
+                if ( !asset ) return;
+
+                var animation = new cc.Animation();
+
+                for (var i = 0; i<10; i++) {
+                    var texture = asset[i];
+                    if ( !texture ) continue;
+                    animation.addSpriteFrameWithFile( texture.url );
+                }
+
+                animation.setDelayPerUnit(asset.delay);
+
+                var loop = asset.loop;
+                var action = cc.animate(animation);
+
+                this._actions[name] = {
+                    action: action,
+                    loop: loop
+                }
+            }.bind(this) )(i);
         }
 
-        var self = this;
-
-        if ( !this._init ) {
-            for (var i = 0; i<5; i++) {
-                (function (name) {
-                    var privateName = '_' + name;
-
-                    self[name] = self[privateName];
-                })(i);
-            }
-            this._init = true;
-        }
-
-        if ( this.animationIndex !== this._current ) {
-            this._current = this.animationIndex;
-            this.play( this._current );
-        }
+        this.play( this.animationIndex );
     }
 }
 
@@ -64,65 +74,14 @@ for (var i = 0; i<5; i++) {
         var privateName = '_' + name;
 
         var assetDef = {
-            set: function (value) {
-                if (value) {
-                    var animation = new cc.Animation();
-
-                    for (var i = 0; i<10; i++) {
-                        var texture = value[i];
-                        if ( !texture ) continue;
-                        animation.addSpriteFrameWithFile( texture.url );
-                    }
-
-                    animation.setDelayPerUnit(value.delay);
-                    animation.setRestoreOriginalFrame(true);
-
-                    var loop = value.loop;
-                    var action = cc.animate(animation);
-
-                    this._actions[name] = {
-                        action: action,
-                        loop: loop
-                    }
-
-                    this[privateName] = value;
-                }
-            }
-        }
-
-        var uuidDef = {
-            get: function () {
-                var asset = this[privateName];
-                return asset ? asset._uuid : '';
-            },
-            set: function (value) {
-                if ( value ) {
-                    var self = this;
-                    Fire.AssetLibrary.loadAsset(value, function (err, asset) {
-                        if (err) {
-                            Fire.error('Failed to load texture from uuid, ' + err);
-                        }
-                        else {
-                            self[name] = asset;
-                        }
-                    });
-                }
-            },
-
-            type: Runtime.SpriteAnimationAsset,
-            displayName: name,
-        }
-
-        proto.properties[name] = assetDef;
-        proto.properties[uuidName] = uuidDef;
-        proto.properties[privateName] = {
             default: null,
-            type: Runtime.SpriteAnimationAsset
+            type: Runtime.SpriteAnimationAsset,
+            displayName: name
         };
 
+        proto.properties[name] = assetDef;
     })(i.toString());
 }
 
 var Animation = Fire.Class(proto);
 
-module.exports = Animation;

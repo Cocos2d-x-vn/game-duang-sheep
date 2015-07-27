@@ -1,8 +1,8 @@
 {
   "ver": 0,
-  "uuid": "c80a9943-fef5-490c-82cb-3782d508fa00",
-  "meta-type": "texture",
-  "type": 1,
-  "wrapMode": 1,
-  "filterMode": 1
+  "uuid": "febe925f-3cc2-4b18-99d6-05a81268e696",
+  "asset-type": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear"
 }

@@ -1,7 +1,7 @@
 {
-  "0": "09d53a44-b0dd-4d67-9c65-fb53cacf64d4",
-  "1": "071312b2-1633-4aaa-825e-09cb631aaee2",
-  "2": "0fb89f32-09fd-4f78-8440-1fc3e1448572",
+  "0": "1cf979f5-663a-44a1-9ce0-e0f6ade6bc80",
+  "1": "846bb3fc-44db-44aa-8a6b-9d6d4a375236",
+  "2": "048a64e1-d4fa-493f-8e6e-206afcdf556b",
   "3": "",
   "4": "",
   "5": "",
@@ -10,8 +10,8 @@
   "8": "",
   "9": "",
   "ver": 0,
-  "uuid": "59f965f2-0ac4-44f2-8294-275d289283f3",
-  "meta-type": "sprite-animation",
+  "uuid": "1ed03fcf-b656-4a6f-8c66-f0dfd6cbb9f7",
+  "asset-type": "sprite-animation",
   "loop": true,
   "delay": 0.2
 }

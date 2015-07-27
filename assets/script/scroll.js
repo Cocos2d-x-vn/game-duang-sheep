@@ -1,8 +1,13 @@
 
-module.exports = Fire.Class({
+Fire.Class({
+    extends: Fire.Behavior,
+
     properties: {
         speed: {
-            default: 1
+            default: 2
+        },
+        width: {
+            default: 890
         }
     },
 
