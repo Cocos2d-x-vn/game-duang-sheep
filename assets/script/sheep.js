@@ -1,3 +1,5 @@
+var Effect = require('./Effect');
+
 //-- 绵羊状态
 var State = Fire.defineEnum({
     Run    : -1,
@@ -15,6 +17,11 @@ Fire.Class({
         jumpAudioAsset: {
             default: null,
             type: Fire.AudioClip
+        },
+
+        jumpEffectAsset: {
+            default: null,
+            type: Runtime.SpriteAnimationAsset
         },
 
         groundY: {
@@ -76,8 +83,8 @@ Fire.Class({
                     this.y = this.groundY;
                     this.state = State.DropEnd;
                     // 播放灰尘特效
-                    // var pos = new Fire.Vec2(this.x, this.y - 30);
-                    // this._playEffect(this.dropEndEffect, pos);
+                    // var pos = cc.p(this.x - 80, this.y + 10);
+                    // Effect.createEffect(this.jumpEffect, pos);
                 }
                 break;
             default:
@@ -103,8 +110,8 @@ Fire.Class({
         }
 
         // 播放灰尘特效
-        // var pos = new Fire.Vec2(this.transform.x - 80, this.transform.y + 10);
-        // this._playEffect(this.jumpEffect, pos);
+        var pos = cc.p(this.x - 80, this.y + 10);
+        Effect.createEffect(this.jumpEffectAsset, pos, 0.5);
     },
 
     onTouchesBegan: function (touches, event) {

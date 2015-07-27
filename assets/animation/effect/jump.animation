@@ -1,0 +1,29 @@
+{
+  "0": {
+    "__uuid__": "450a6cde-4d6a-453c-a0ef-97ce566a7f1f"
+  },
+  "2": {
+    "__uuid__": "664cbc2f-2c07-4f13-a5dc-f490381f4f06"
+  },
+  "3": {
+    "__uuid__": "27cad377-9beb-4630-9b44-cbd07bd88a46"
+  },
+  "4": {
+    "__uuid__": "2621bd44-b472-4e4a-875e-cd5613f69d6e"
+  },
+  "5": {
+    "__uuid__": "1dd3578d-b471-40a3-ab59-426a87516de1"
+  },
+  "6": null,
+  "7": null,
+  "8": null,
+  "9": null,
+  "__type__": "Runtime.SpriteAnimationAsset",
+  "_name": "jump",
+  "_objFlags": 0,
+  "_rawFiles": [
+    "jump.animation"
+  ],
+  "loop": false,
+  "delay": 0.2
+}

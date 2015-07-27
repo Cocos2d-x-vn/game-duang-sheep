@@ -61,7 +61,7 @@
                 },
                 "t": {
                   "speed": 200,
-                  "minX": -900,
+                  "minX": -200,
                   "topPosRange": {
                     "__type__": "Fire.Vec2",
                     "x": 270,
@@ -151,6 +151,9 @@
                   "jumpAudioAsset": {
                     "__uuid__": "2510b10d-eecb-4d76-b98d-da1deaa35b90"
                   },
+                  "jumpEffectAsset": {
+                    "__uuid__": "fd21f11c-b260-4d65-aedc-4c066965a198"
+                  },
                   "groundY": 93.54,
                   "jumpSpeed": 450,
                   "gravity": 9.8,
@@ -208,6 +211,15 @@
               },
               "gameOverAudioAsset": {
                 "__uuid__": "d8b7480b-6e58-46a6-938c-0e376da4eaa9"
+              },
+              "scoreAudio": {
+                "__uuid__": "08e86081-99f4-46e3-a4e5-0bbb3efa339f"
+              },
+              "addScoreFont": {
+                "__uuid__": "33b1bd43-aeec-4cdf-9357-6a668e06f63a"
+              },
+              "hitEffect": {
+                "__uuid__": "9f4919bb-5c28-444e-8477-3108a841a800"
               }
             },
             "m": "43a3cDgCMFJJqAIk3JE3KV3"
@@ -279,7 +291,7 @@
         "_objFlags": 0,
         "_id": "6f1edzd3hVHtrnpy2K2xHon",
         "_position": [
-          0,
+          -90,
           95
         ],
         "_scale": [
@@ -311,7 +323,7 @@
         "_objFlags": 0,
         "_id": "4075fq5lTBPd4H//K4QXUI5",
         "_position": [
-          890,
+          800,
           95
         ],
         "_scale": [
@@ -343,7 +355,7 @@
         "_objFlags": 0,
         "_id": "aa47fa1+AhIsKVWX2w8KkS7",
         "_position": [
-          1780,
+          1690,
           95
         ],
         "_scale": [
@@ -433,7 +445,7 @@
         "_objFlags": 0,
         "_id": "8dbb8DWVHFAOoAlg/kuh3MY",
         "_position": [
-          0,
+          -90,
           0
         ],
         "_scale": [
@@ -465,7 +477,7 @@
         "_objFlags": 0,
         "_id": "35929pttDZIP44Cl2Pa8Dkm",
         "_position": [
-          890,
+          800,
           0
         ],
         "_scale": [
@@ -497,7 +509,7 @@
         "_objFlags": 0,
         "_id": "34430gtJ+hFvKdNqTu0ZpoM",
         "_position": [
-          1780,
+          1690,
           0
         ],
         "_scale": [

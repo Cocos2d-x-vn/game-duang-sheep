@@ -21,7 +21,6 @@ Fire.Class({
         // 创建PipeGroup需要的时间
         spawnInterval: 3,
 
-
         // asset
         pipeAsset: {
             default: '',
@@ -51,14 +50,20 @@ Fire.Class({
             this._createPipeGroup();
         }
 
+        var groupToRemove = [];
+
         var groups = this.pipeGroups;
         groups.forEach( function (group) {
             group.x -= dt * this.speed;
             if (group.x < this.minX) {
-                groups.splice( groups.indexOf(group), 1 );
-                group.removeFromParent();
+                groupToRemove.push( group );
             }
         }.bind(this) );
+
+        groupToRemove.forEach( function (group) {
+            groups.splice( groups.indexOf(group), 1 );
+            group.removeFromParent();
+        });
     },
 
     _createPipeGroup: function () {
@@ -94,15 +99,34 @@ Fire.Class({
         group.passed = false;
     },
 
+    getNext: function () {
+        var groups = this.pipeGroups;
+        for (var i = 0; i<groups.length; i++) {
+            var group = groups[i];
+            if ( !group.passed ) {
+                return group;
+            }
+        }
+
+        return null;
+    },
+
     collisionDetection: function (target) {
-        var rect = cc.rectApplyAffineTransform(target.getBoundingBox(), target.getNodeToWorldTransform());
+        var rect = target.getBoundingBoxToWorld();
+
+        // 降低难度
+
+        rect.x += 20;
+        rect.y += 15;
+        rect.width -= 40;
+        rect.height -= 30;
 
         var groups = this.pipeGroups;
         for (var i = 0; i<groups.length; i++ ) {
             var group = groups[i];
 
-            var topPipeRect = cc.rectApplyAffineTransform(group.top.getBoundingBox(), group.top.getNodeToWorldTransform());
-            var bottomPipeRect = cc.rectApplyAffineTransform(group.bottom.getBoundingBox(), group.bottom.getNodeToWorldTransform());
+            var topPipeRect = group.top.getBoundingBoxToWorld();
+            var bottomPipeRect = group.bottom.getBoundingBoxToWorld()
 
             if ( cc.rectIntersectsRect(rect, topPipeRect) || cc.rectIntersectsRect(rect, bottomPipeRect) ) {
                 return true;
@@ -110,5 +134,9 @@ Fire.Class({
         }
 
         return false;
+    },
+
+    setAsPassed: function (group) {
+        group.passed = true;
     }
 });
