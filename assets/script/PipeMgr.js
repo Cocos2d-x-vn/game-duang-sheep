@@ -32,11 +32,17 @@ Fire.Class({
     onLoad: function () {
         this.pipeGroups = [];
         this.lastTime = 0;
+        this.enabled = true;
 
         this._createPipeGroup();
+
+        cc.eventManager.addCustomListener('game-over', function(event){
+            this.enabled = false;
+        }.bind(this) );
     },
 
     update: function (dt) {
+        if ( !this.enabled ) return;
 
         this._updateGroup(dt);
     },

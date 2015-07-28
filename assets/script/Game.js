@@ -82,7 +82,7 @@ Fire.Class({
                     cc.audioEngine.playMusic( this.gameOverAudioAsset, false );
                     this.sheep.state = Sheep.State.Dead;
 
-                    this.pipeMgr.enabled = false;
+                    cc.eventManager.dispatchCustomEvent("game-over");
                 }
                 // 计算分数
                 this._updateScore();
