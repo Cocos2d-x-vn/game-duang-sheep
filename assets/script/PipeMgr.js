@@ -132,7 +132,7 @@ Fire.Class({
             var group = groups[i];
 
             var topPipeRect = group.top.getBoundingBoxToWorld();
-            var bottomPipeRect = group.bottom.getBoundingBoxToWorld()
+            var bottomPipeRect = group.bottom.getBoundingBoxToWorld();
 
             if ( cc.rectIntersectsRect(rect, topPipeRect) || cc.rectIntersectsRect(rect, bottomPipeRect) ) {
                 return true;

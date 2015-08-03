@@ -12,7 +12,7 @@ Fire.Class({
     },
 
     onLoad: function () {
-        this.enabled = false;
+        this.enabled = true;
 
         cc.eventManager.addCustomListener('game-over', function(event){
             this.enabled = false;
@@ -22,11 +22,14 @@ Fire.Class({
 
     update: function (dt) {
         if ( !this.enabled ) return;
+        var childNodes = this.getChildren();
+        for (var i = 0; i < childNodes.length; ++i) {
+            var child = childNodes[i];
+            child.x -= this.speed * dt;
 
-        this.x -= this.speed;
-
-        if (this.x < - this.width ) {
-            this.x = this.width*2;
+            if (child.x < - child.width ) {
+                child.x = child.width*2;
+            }
         }
     },
 });

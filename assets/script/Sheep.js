@@ -36,7 +36,9 @@ Fire.Class({
             set: function(value){
                 if (value !== this._state) {
                     this._state = value;
-                    Animation.play(this._state, this);
+                    if (Animation) {
+                        Animation.play(this._state, this);
+                    }
                 }
             },
             type: State

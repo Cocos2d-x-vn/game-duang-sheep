@@ -41,6 +41,8 @@ var initAnimation = function() {
     }
 };
 
+initAnimation();
+
 var play = function(state, sheep) {
     sheep.stopAllActions();
     var loop = animData[state].loop;
@@ -56,4 +58,8 @@ var play = function(state, sheep) {
     else {
         sheep.runAction( action );
     }
+};
+
+module.exports = {
+    play: play
 };
