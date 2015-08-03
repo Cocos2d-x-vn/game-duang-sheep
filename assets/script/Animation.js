@@ -1,87 +1,59 @@
-var proto = {
-    extends: Fire.Behavior,
-
-    properties: {
-
-        animationIndex: {
-            default: -1,
-            type: Fire.Integer,
-            range: [-1, 4]
-        }
+var Effect = require('Effect');
+var animData = [
+    {
+        name: "sheep_run_",
+        count: 4,
+        startIdx: 1,
+        delay: 0.1,
+        loop: true
     },
-
-    play: function (index) {
-        this.stopAllActions();
-
-        var action = this._actions[index].action;
-        var loop = this._actions[index].loop;
-
-        if (loop) {
-            this.runAction( action.repeatForever() );
-        }
-        else if (this.onPlayEnd) {
-            var callback = cc.callFunc(this.onPlayEnd, this);
-            this.runAction( cc.sequence(action, callback) );
-        }
-        else {
-            this.runAction( action );
-        }
-
-        this.animationIndex = index;
+    {
+        name: "sheep_jump_",
+        count: 3,
+        startIdx: 1,
+        delay: 0.1
     },
-
-    onLoad: function () {
-        this._actions = {};
-
-        this._initAnimation();
+    {
+        name: "sheep_jump_",
+        count: 3,
+        startIdx: 3,
+        delay: 0.1
     },
-
-    _initAnimation: function () {
-        for (var i = 0; i<5; i++) {
-            ( function (name) {
-                var asset = this[name];
-                if ( !asset ) return;
-
-                var animation = new cc.Animation();
-
-                for (var i = 0; i<10; i++) {
-                    var texture = asset[i];
-                    if ( !texture ) continue;
-                    animation.addSpriteFrameWithFile( texture.url );
-                }
-
-                animation.setDelayPerUnit(asset.delay);
-
-                var loop = asset.loop;
-                var action = cc.animate(animation);
-
-                this._actions[name] = {
-                    action: action,
-                    loop: loop
-                }
-            }.bind(this) )(i);
-        }
-
-        this.play( this.animationIndex );
+    {
+        name: "sheep_down_",
+        count: 3,
+        startIdx: 1,
+        delay: 0.1
+    },
+    {
+        name: "sheep_touch_",
+        count: 1,
+        startIdx: 1,
+        delay: 0.1
     }
-}
+];
 
+var sheepAnims = [];
+var initAnimation = function() {
+    for (var i = 0; i < animData.length; ++i) {
+        var info = animData[i];
+        sheepAnims[i] = Effect.createAnimation(info.name, info.count, info.startIdx, info.delay);
+    }
+};
 
-for (var i = 0; i<5; i++) {
-
-    (function (name) {
-        var uuidName = name + 'Uuid';
-        var privateName = '_' + name;
-
-        var assetDef = {
-            default: null,
-            type: Runtime.SpriteAnimationAsset,
-            displayName: name
-        };
-
-        proto.properties[name] = assetDef;
-    })(i.toString());
-}
-
-var Animation = Fire.Class(proto);
-
+var play = function(state, sheep) {
+    sheep.stopAllActions();
+    var loop = animData[state].loop;
+    var anim = sheepAnims[state];
+    var action = cc.animate(anim);
+    if (loop) {
+        sheep.runAction( cc.repeatForever(action) );
+    }
+    else if (sheep.onPlayEnd) {
+        var callback = cc.callFunc(sheep.onPlayEnd, sheep);
+        sheep.runAction( cc.sequence(action, callback) );
+    }
+    else {
+        sheep.runAction( action );
+    }
+};

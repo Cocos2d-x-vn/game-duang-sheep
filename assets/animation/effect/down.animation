@@ -1,0 +1,27 @@
+{
+  "0": {
+    "__uuid__": "fba06cf0-b9b8-4417-b02e-5d10648e807c"
+  },
+  "2": {
+    "__uuid__": "fce38e96-baa8-468e-a554-9f3f1b0195f7"
+  },
+  "3": {
+    "__uuid__": "f7d38631-eee0-412f-af99-aef129c3e279"
+  },
+  "4": {
+    "__uuid__": "3a72996d-e1e7-460f-b8eb-3bd245b18d7b"
+  },
+  "5": null,
+  "6": null,
+  "7": null,
+  "8": null,
+  "9": null,
+  "__type__": "Runtime.SpriteAnimationAsset",
+  "_name": "down",
+  "_objFlags": 0,
+  "_rawFiles": [
+    "down.animation"
+  ],
+  "loop": false,
+  "delay": 0.1
+}

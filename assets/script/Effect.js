@@ -1,15 +1,5 @@
-
-
-var createEffect = function  (asset, position, scale) {
-    var animation = new cc.Animation();
-
-    for (var i = 0; i<10; i++) {
-        var texture = asset[i];
-        if ( !texture ) continue;
-        animation.addSpriteFrameWithFile( texture.url );
-    }
-
-    animation.setDelayPerUnit(asset.delay);
+var createEffect = function  (animInfo, position, scale) {
+    var animation = createAnimation(animInfo.name, animInfo.count, animInfo.startIdx, animInfo.delay);
 
     var action = cc.animate(animation);
     var sprite = new cc.Sprite();
@@ -24,8 +14,25 @@ var createEffect = function  (asset, position, scale) {
     sprite.runAction( cc.sequence(action, callback) );
 
     return sprite;
-}
+};
+
+var createAnimation = function(animName, count, startIdx, delay) {
+    var animFrames = [];
+    var frame,str;
+    // init run animation
+    for (var i = startIdx; i < count; i++) {
+        var num = i;
+        if (num < 10) {
+            num = "0" + i;
+        }
+        str = animName + num + ".png";
+        frame = cc.spriteFrameCache.getSpriteFrame(str);
+        animFrames.push(frame);
+    }
+    return new cc.Animation(animFrames, delay);
+};
 
 module.exports = {
-    createEffect: createEffect
-}
+    createEffect: createEffect,
+    createAnimation: createAnimation
+};

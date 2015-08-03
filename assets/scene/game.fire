@@ -59,6 +59,25 @@
                 "w": {
                   "__id__": 6
                 },
+                "c": [
+                  {
+                    "w": {
+                      "__id__": 7
+                    },
+                    "c": [
+                      {
+                        "w": {
+                          "__id__": 8
+                        }
+                      },
+                      {
+                        "w": {
+                          "__id__": 9
+                        }
+                      }
+                    ]
+                  }
+                ],
                 "t": {
                   "speed": 200,
                   "minX": -200,
@@ -86,12 +105,12 @@
               },
               {
                 "w": {
-                  "__id__": 7
+                  "__id__": 10
                 },
                 "c": [
                   {
                     "w": {
-                      "__id__": 8
+                      "__id__": 11
                     },
                     "t": {
                       "speed": 2,
@@ -101,7 +120,7 @@
                   },
                   {
                     "w": {
-                      "__id__": 9
+                      "__id__": 12
                     },
                     "t": {
                       "speed": 2,
@@ -111,7 +130,7 @@
                   },
                   {
                     "w": {
-                      "__id__": 10
+                      "__id__": 13
                     },
                     "t": {
                       "speed": 2,
@@ -125,96 +144,46 @@
           },
           {
             "w": {
-              "__id__": 11
+              "__id__": 14
             },
             "c": [
-              {
-                "w": {
-                  "__id__": 12
-                },
-                "t": {
-                  "0": {
-                    "__uuid__": "2123fcab-3e57-42f3-bfbc-acc10dd7d482"
-                  },
-                  "1": {
-                    "__uuid__": "ceea69c5-5664-42b5-ba0b-2bc0e4a76986"
-                  },
-                  "2": {
-                    "__uuid__": "0cf780de-5385-48d0-a7ea-4605745f5da1"
-                  },
-                  "3": {
-                    "__uuid__": "c8a10734-df04-4e7f-baca-341809c974c1"
-                  },
-                  "4": {
-                    "__uuid__": "f1a6e40e-fa8c-47eb-b6d0-9abd2c4a09d5"
-                  },
-                  "jumpAudioAsset": {
-                    "__uuid__": "2510b10d-eecb-4d76-b98d-da1deaa35b90"
-                  },
-                  "jumpEffectAsset": {
-                    "__uuid__": "fd21f11c-b260-4d65-aedc-4c066965a198"
-                  },
-                  "groundY": 93.54,
-                  "jumpSpeed": 450,
-                  "gravity": 9.8,
-                  "_state": 0,
-                  "animationIndex": 0
-                },
-                "m": [
-                  "b68d9xsyfBAiaEiAQOdMWG2",
-                  "567fcygTtNI9pLSjHpUD9wz"
-                ]
-              }
-            ]
-          },
-          {
-            "w": {
-              "__id__": 13
-            },
-            "c": [
-              {
-                "w": {
-                  "__id__": 14
-                }
-              },
               {
                 "w": {
                   "__id__": 15
                 },
                 "t": {
-                  "0": {
-                    "__uuid__": "1ed03fcf-b656-4a6f-8c66-f0dfd6cbb9f7"
+                  "jumpAudioAsset": {
+                    "__uuid__": "2510b10d-eecb-4d76-b98d-da1deaa35b90"
                   },
-                  "1": null,
-                  "2": null,
-                  "3": null,
-                  "4": null,
-                  "animationIndex": 0
+                  "groundY": 93.54,
+                  "jumpSpeed": 450,
+                  "gravity": 9.8,
+                  "_state": 0
                 },
-                "m": "567fcygTtNI9pLSjHpUD9wz"
+                "m": "b68d9xsyfBAiaEiAQOdMWG2"
+              }
+            ]
+          },
+          {
+            "w": {
+              "__id__": 16
+            },
+            "c": [
+              {
+                "w": {
+                  "__id__": 17
+                }
               },
               {
                 "w": {
-                  "__id__": 16
+                  "__id__": 18
+                }
+              },
+              {
+                "w": {
+                  "__id__": 19
                 },
                 "c": [
-                  {
-                    "w": {
-                      "__id__": 17
-                    }
-                  },
-                  {
-                    "w": {
-                      "__id__": 18
-                    }
-                  },
-                  {
-                    "w": {
-                      "__id__": 19
-                    },
-                    "t": {},
-                    "m": "1c7ddS2zpBHl5GLLp+o63gj"
-                  },
                   {
                     "w": {
                       "__id__": 20
@@ -223,6 +192,23 @@
                   {
                     "w": {
                       "__id__": 21
+                    }
+                  },
+                  {
+                    "w": {
+                      "__id__": 22
+                    },
+                    "t": {},
+                    "m": "1c7ddS2zpBHl5GLLp+o63gj"
+                  },
+                  {
+                    "w": {
+                      "__id__": 23
+                    }
+                  },
+                  {
+                    "w": {
+                      "__id__": 24
                     }
                   }
                 ],
@@ -235,7 +221,7 @@
           },
           {
             "w": {
-              "__id__": 22
+              "__id__": 25
             },
             "t": {
               "bgAudioAsset": {
@@ -450,6 +436,99 @@
       },
       {
         "__type__": "Runtime.NodeWrapper",
+        "_name": "",
+        "_objFlags": 0,
+        "_id": "7b544Db2AhG14BQhbA9735y",
+        "_position": [
+          505.2666666666666,
+          0
+        ],
+        "_scale": [
+          1,
+          1
+        ],
+        "_rotation": 0,
+        "_size": [
+          0,
+          0
+        ],
+        "_color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "_anchorPoint": [
+          0,
+          0
+        ]
+      },
+      {
+        "__type__": "Runtime.SpriteWrapper",
+        "_name": "",
+        "_objFlags": 0,
+        "_id": "499dbTW5RlHmKfHc7Ea4nbb",
+        "_position": [
+          0,
+          377.692464068532
+        ],
+        "_scale": [
+          0.7,
+          0.15
+        ],
+        "_rotation": 0,
+        "_size": [
+          148,
+          1024
+        ],
+        "_color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "_anchorPoint": [
+          0.5,
+          0
+        ],
+        "_texture": {
+          "__uuid__": "24478c24-2eca-432b-bff4-98c0a35e3f5d"
+        }
+      },
+      {
+        "__type__": "Runtime.SpriteWrapper",
+        "_name": "",
+        "_objFlags": 0,
+        "_id": "49cd8XBfMJGwan40QAGewy1",
+        "_position": [
+          0,
+          203.11894006561488
+        ],
+        "_scale": [
+          0.7,
+          -0.15
+        ],
+        "_rotation": 0,
+        "_size": [
+          148,
+          1024
+        ],
+        "_color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "_anchorPoint": [
+          0.5,
+          0
+        ],
+        "_texture": {
+          "__uuid__": "24478c24-2eca-432b-bff4-98c0a35e3f5d"
+        }
+      },
+      {
+        "__type__": "Runtime.NodeWrapper",
         "_name": "grountGroup",
         "_objFlags": 0,
         "_id": "aed07AWIPNPb5ctXqZVRvpO",
@@ -631,7 +710,7 @@
           0.5
         ],
         "_texture": {
-          "__uuid__": "a231714a-02a5-4cfa-91e9-a2cdcdd366ec"
+          "__uuid__": "19e5c0c4-f981-4844-9de0-b171769fe452"
         }
       },
       {

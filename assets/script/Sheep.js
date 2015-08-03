@@ -1,4 +1,5 @@
 var Effect = require('Effect');
+var Animation = require('Animation');
 
 //-- 绵羊状态
 var State = Fire.defineEnum({
@@ -19,9 +20,9 @@ Fire.Class({
             type: Fire.AudioClip
         },
 
-        jumpEffectAsset: {
-            default: null,
-            type: Runtime.SpriteAnimationAsset
+        sheepAtlasAsset: {
+            default: "",
+            url: Runtime.SpriteAtlas
         },
 
         groundY: {
@@ -35,8 +36,7 @@ Fire.Class({
             set: function(value){
                 if (value !== this._state) {
                     this._state = value;
-
-                    this.play(this._state);
+                    Animation.play(this._state, this);
                 }
             },
             type: State
@@ -55,7 +55,9 @@ Fire.Class({
     onLoad: function () {
 
         this.currentSpeed = 0;
-
+        if (this.sheepAtlasAsset) {
+            cc.spriteFrameCache.addSpriteFrames(this.sheepAtlasAsset);
+        }
         cc.eventManager.addListener({
             event: cc.EventListener.TOUCH_ALL_AT_ONCE,
             onTouchesBegan: this.onTouchesBegan.bind(this)
@@ -83,8 +85,14 @@ Fire.Class({
                     this.y = this.groundY;
                     this.state = State.DropEnd;
                     // 播放灰尘特效
-                    // var pos = cc.p(this.x - 80, this.y + 10);
-                    // Effect.createEffect(this.jumpEffect, pos);
+                    var pos = cc.p(this.x - 80, this.y + 10);
+                    var animInfo = {
+                        name: "fx_downfog",
+                        count: 5,
+                        startIdx: 1,
+                        delay: 0.1
+                    };
+                    Effect.createEffect(animInfo, pos);
                 }
                 break;
             default:
@@ -111,7 +119,13 @@ Fire.Class({
 
         // 播放灰尘特效
         var pos = cc.p(this.x - 80, this.y + 10);
-        Effect.createEffect(this.jumpEffectAsset, pos, 0.5);
+        var animInfo = {
+            name: "fx_fog",
+            count: 6,
+            startIdx: 1,
+            delay: 0.1
+        };
+        Effect.createEffect(animInfo, pos, 0.5);
     },
 
     onTouchesBegan: function (touches, event) {

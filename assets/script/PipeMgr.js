@@ -34,7 +34,7 @@ Fire.Class({
         this.lastTime = 0;
         this.enabled = true;
 
-        this._createPipeGroup();
+        // this._createPipeGroup();
 
         cc.eventManager.addCustomListener('game-over', function(event){
             this.enabled = false;
