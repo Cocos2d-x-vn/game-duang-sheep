@@ -89,7 +89,7 @@ Fire.Class({
                     this.y = this.groundY;
                     this.state = State.DropEnd;
                     // 播放灰尘特效
-                    var pos = cc.p(this.x - 80, this.y + 10);
+                    var pos = cc.p(this.x - 40, this.y - 10);
                     var animInfo = {
                         name: "fx_downfog",
                         count: 5,
@@ -122,7 +122,7 @@ Fire.Class({
         }
 
         // 播放灰尘特效
-        var pos = cc.p(this.x - 80, this.y + 10);
+        var pos = cc.p(this.x - 40, this.y - 10);
         var animInfo = {
             name: "fx_fog",
             count: 6,

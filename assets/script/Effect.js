@@ -11,6 +11,7 @@ var createEffect = function  (animInfo, position, scale) {
     if (scale) sprite.scale = scale;
 
     var callback = cc.callFunc(sprite.removeFromParent, sprite);
+    sprite.setName('fx');
     sprite.runAction( cc.sequence(action, callback) );
 
     return sprite;

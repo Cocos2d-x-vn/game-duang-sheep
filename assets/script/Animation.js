@@ -11,7 +11,7 @@ var animData = [
         name: "sheep_jump_",
         count: 3,
         startIdx: 1,
-        delay: 0.1
+        delay: 0.2
     },
     {
         name: "sheep_jump_",

@@ -78,6 +78,10 @@ Fire.Class({
         group.top = new cc.Sprite( this.pipeAsset );
         group.bottom = new cc.Sprite( this.pipeAsset );
 
+        group.setName('pipeGrp');
+        group.top.setName('pipeTop');
+        group.bottom.setName('pipeBottom');
+
         group.top.setAnchorPoint(0.5, 0);
         group.bottom.setAnchorPoint(0.5, 0);
 
@@ -96,11 +100,11 @@ Fire.Class({
         group.top.y = topYpos;
         group.bottom.y = bottomYpos;
 
-        group.top.scaleX = 0.7;
-        group.top.scaleY = 0.15;
+        group.top.scaleX = 1;
+        group.top.scaleY = 0.3;
 
-        group.bottom.scaleX = 0.7;
-        group.bottom.scaleY = -0.15;
+        group.bottom.scaleX = 1;
+        group.bottom.scaleY = -0.3;
 
         group.passed = false;
     },
@@ -122,10 +126,10 @@ Fire.Class({
 
         // 降低难度
 
-        rect.x += 25;
-        rect.y += 20;
-        rect.width -= 50;
-        rect.height -= 40;
+        rect.x += 40;
+        rect.y += 30;
+        rect.width -= 80;
+        rect.height -= 60;
 
         var groups = this.pipeGroups;
         for (var i = 0; i<groups.length; i++ ) {

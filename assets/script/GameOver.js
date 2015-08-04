@@ -13,7 +13,7 @@ module.exports = Fire.Class({
     },
 
     onGameOver: function ( event ) {
-        var action = new cc.MoveTo( this.dropTime, cc.p(320, 240) );
+        var action = cc.moveBy( this.dropTime, cc.p(0, -500) );
         this.runAction(action);
 
         this.scoreText.string = event.getUserData();
