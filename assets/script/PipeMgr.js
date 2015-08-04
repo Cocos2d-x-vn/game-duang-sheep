@@ -122,10 +122,10 @@ Fire.Class({
 
         // 降低难度
 
-        rect.x += 20;
-        rect.y += 15;
-        rect.width -= 40;
-        rect.height -= 30;
+        rect.x += 25;
+        rect.y += 20;
+        rect.width -= 50;
+        rect.height -= 40;
 
         var groups = this.pipeGroups;
         for (var i = 0; i<groups.length; i++ ) {

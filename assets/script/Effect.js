@@ -20,7 +20,7 @@ var createAnimation = function(animName, count, startIdx, delay) {
     var animFrames = [];
     var frame,str;
     // init run animation
-    for (var i = startIdx; i < count; i++) {
+    for (var i = startIdx; i < startIdx + count; i++) {
         var num = i;
         if (num < 10) {
             num = "0" + i;

@@ -59,6 +59,8 @@ Fire.Class({
         this.currentSpeed = 0;
         if (this.sheepAtlasAsset) {
             cc.spriteFrameCache.addSpriteFrames(this.sheepAtlasAsset);
+            Animation.initAnimation();
+            Animation.play(State.Run, this);
         }
         cc.eventManager.addListener({
             event: cc.EventListener.TOUCH_ALL_AT_ONCE,

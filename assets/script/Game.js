@@ -75,15 +75,15 @@ Fire.Class({
                     cc.audioEngine.playMusic( this.bgAudioAsset, true );
                 }
 
-                var gameOver = this.pipeMgr.collisionDetection( this.sheep );
-                if ( gameOver ) {
-                    this.gameState = GameState.Over;
-                    cc.audioEngine.playEffect( this.dieAudioAsset, false );
-                    cc.audioEngine.playMusic( this.gameOverAudioAsset, false );
-                    this.sheep.state = Sheep.State.Dead;
-
-                    cc.eventManager.dispatchCustomEvent("game-over", this.score);
-                }
+                //var gameOver = this.pipeMgr.collisionDetection( this.sheep );
+                // if ( gameOver ) {
+                //     this.gameState = GameState.Over;
+                //     cc.audioEngine.playEffect( this.dieAudioAsset, false );
+                //     cc.audioEngine.playMusic( this.gameOverAudioAsset, false );
+                //     this.sheep.state = Sheep.State.Dead;
+                //
+                //     cc.eventManager.dispatchCustomEvent("game-over", this.score);
+                // }
                 // 计算分数
                 this._updateScore();
                 break;

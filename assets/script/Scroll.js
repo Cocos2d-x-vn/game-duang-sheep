@@ -28,7 +28,7 @@ Fire.Class({
             child.x -= this.speed * dt;
 
             if (child.x < - child.width ) {
-                child.x = child.width*2;
+                child.x += child.width*3;
             }
         }
     },
