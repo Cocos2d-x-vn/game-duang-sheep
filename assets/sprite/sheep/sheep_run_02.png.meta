@@ -2,7 +2,7 @@
   "ver": 0,
   "uuid": "fab266b0-0480-4df0-9a26-7d1d61bdfa1b",
   "asset-type": "texture",
-  "type": "sprite",
+  "type": "raw",
   "wrapMode": "clamp",
   "filterMode": "bilinear"
 }
