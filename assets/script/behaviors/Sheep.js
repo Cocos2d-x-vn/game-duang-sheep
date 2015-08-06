@@ -17,7 +17,7 @@ Fire.Class({
 
         jumpAudioAsset: {
             default: null,
-            type: Fire.AudioClip
+            url: Fire.AudioClip
         },
 
         sheepAtlasAsset: {
@@ -118,7 +118,7 @@ Fire.Class({
         this.currentSpeed = this.jumpSpeed;
 
         if (this.jumpAudioAsset) {
-            cc.audioEngine.playEffect( this.jumpAudioAsset.url, false );
+            cc.audioEngine.playEffect( this.jumpAudioAsset, false );
         }
 
         // 播放灰尘特效
