@@ -22,6 +22,11 @@
                 "w": {
                   "__id__": 2
                 },
+                "t": {
+                  "speed": 150,
+                  "width": 900
+                },
+                "m": "d31b17LBDtIuZaEcbmQyJTH",
                 "c": [
                   {
                     "w": {
@@ -38,12 +43,7 @@
                       "__id__": 5
                     }
                   }
-                ],
-                "t": {
-                  "speed": 150,
-                  "width": 900
-                },
-                "m": "d31b17LBDtIuZaEcbmQyJTH"
+                ]
               },
               {
                 "w": {
@@ -78,6 +78,11 @@
                 "w": {
                   "__id__": 7
                 },
+                "t": {
+                  "speed": 200,
+                  "width": 864
+                },
+                "m": "d31b17LBDtIuZaEcbmQyJTH",
                 "c": [
                   {
                     "w": {
@@ -94,12 +99,7 @@
                       "__id__": 10
                     }
                   }
-                ],
-                "t": {
-                  "speed": 200,
-                  "width": 864
-                },
-                "m": "d31b17LBDtIuZaEcbmQyJTH"
+                ]
               }
             ]
           },
@@ -147,6 +147,10 @@
                 "w": {
                   "__id__": 16
                 },
+                "t": {
+                  "dropTime": 0.5
+                },
+                "m": "c9bc52WjZRLHpOoGEvXDbfc",
                 "c": [
                   {
                     "w": {
@@ -175,11 +179,7 @@
                       "__id__": 21
                     }
                   }
-                ],
-                "t": {
-                  "dropTime": 0.5
-                },
-                "m": "c9bc52WjZRLHpOoGEvXDbfc"
+                ]
               }
             ]
           },
@@ -188,6 +188,15 @@
               "__id__": 22
             },
             "t": {
+              "pipeMgr": {
+                "__id__": 6
+              },
+              "sheep": {
+                "__id__": 12
+              },
+              "scoreText": {
+                "__id__": 14
+              },
               "bgAudioAsset": {
                 "__uuid__": "811f2f49-03ac-4c56-804f-ca2708c8ad6c"
               },
@@ -801,13 +810,27 @@
           0.5,
           0.5
         ],
+        "_enabled": true,
+        "_touchEnabled": true,
+        "_enableScale9": false,
+        "_capInsets": null,
+        "_valOf$left": 0,
+        "_valOf$right": 0,
+        "_valOf$top": 0,
+        "_valOf$bottom": 0,
         "_normalTexture": {
           "__uuid__": "0e5b69e1-e56f-43ab-8ae8-6d5b78250146"
         },
         "_text": "",
         "_fontSize": 16,
-        "_font": null,
-        "_fontFamily": "Arial"
+        "_fontFamily": "Arial",
+        "_fontColor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "_valOf$_font": null
       },
       {
         "__type__": "Runtime.BitmapFontWrapper",

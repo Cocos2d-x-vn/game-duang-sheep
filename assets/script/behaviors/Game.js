@@ -11,6 +11,21 @@ Fire.Class({
     extends: Fire.Behavior,
 
     properties: {
+        pipeMgr: {
+            default: null,
+            type: cc.Node
+        },
+
+        sheep: {
+            default: null,
+            type: cc.Node
+        },
+
+        scoreText: {
+            default: null,
+            type: cc.Node
+        },
+
         bgAudioAsset: {
             default: '',
             url: Fire.AudioClip,
@@ -48,14 +63,6 @@ Fire.Class({
     },
 
     onLoad: function () {
-
-        var scene = cc.director.getRunningScene();
-
-        this.pipeMgr = scene.getChildByName( 'bgLayer' ).getChildByName( 'pipeMgr' );
-        this.sheep = scene.getChildByName( 'gameLayer' ).getChildByName( 'sheep' );
-        this.scoreText = scene.getChildByName( 'uiLayer' ).getChildByName( 'score' );
-
-
         // 游戏状态
         this.gameState = GameState.Ready;
         // 分数
