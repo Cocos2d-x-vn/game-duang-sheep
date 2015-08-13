@@ -188,6 +188,15 @@
               "__id__": 22
             },
             "t": {
+              "pipeMgr": {
+                "__id__": 6
+              },
+              "sheep": {
+                "__id__": 12
+              },
+              "scoreText": {
+                "__id__": 14
+              },
               "bgAudioAsset": {
                 "__uuid__": "811f2f49-03ac-4c56-804f-ca2708c8ad6c"
               },
