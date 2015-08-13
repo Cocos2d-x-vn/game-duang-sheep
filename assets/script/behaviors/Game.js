@@ -39,11 +39,6 @@ Fire.Class({
         addScoreFont: {
             default: '',
             url: Fire.BitmapFont
-        },
-
-        hitEffect: {
-            default: '',
-            type: Runtime.SpriteAnimationAsset
         }
     },
 
@@ -128,7 +123,14 @@ Fire.Class({
         var callback = cc.callFunc( function () {
             node.removeFromParent();
 
-            var effect = Effect.createEffect( this.hitEffect, node.getPosition() );
+            // 播放碰撞特效
+            var animInfo = {
+                name: "fx_hit",
+                count: 3,
+                startIdx: 1,
+                delay: 0.1
+            };
+            var effect = Effect.createEffect(animInfo, node.getPosition(), 0.5);
             effect.color = cc.color(255, 0, 0);
             effect.scale = 0.6;
         }, this );
