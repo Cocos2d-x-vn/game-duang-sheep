@@ -63,19 +63,20 @@ Fire.Class({
         // 分数
         this.score = 0;
         this.scoreText.string = 0;
-        var policy = new cc.ResolutionPolicy(cc.ContainerStrategy.PROPORTION_TO_FRAME, cc.ContentStrategy.SHOW_ALL);
-        cc.view.setDesignResolutionSize(900, 640, policy);
+        cc.view.setDesignResolutionSize(900, 640, cc.ResolutionPolicy.SHOW_ALL);
     },
 
     update: function (dt) {
 
         switch( this.gameState ) {
             case GameState.Ready:
+                cc.audioEngine.stopMusic();
                 cc.audioEngine.playMusic( this.readyAudioAsset, false );
                 this.gameState = GameState.Run;
                 break;
             case  GameState.Run:
                 if ( !cc.audioEngine.isMusicPlaying() ) {
+                    cc.audioEngine.stopMusic();
                     cc.audioEngine.playMusic( this.bgAudioAsset, true );
                 }
 
@@ -83,6 +84,7 @@ Fire.Class({
                 if ( gameOver ) {
                     this.gameState = GameState.Over;
                     cc.audioEngine.playEffect( this.dieAudioAsset, false );
+                    cc.audioEngine.stopMusic();
                     cc.audioEngine.playMusic( this.gameOverAudioAsset, false );
                     this.sheep.state = Sheep.State.Dead;
 

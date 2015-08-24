@@ -8,6 +8,7 @@ module.exports = Fire.Class({
     // use this for initialization
     onLoad: function () {
         this.scoreText = this.getChildByName( 'score' );
+        this.retain();
 
         cc.eventManager.addCustomListener('game-over', this.onGameOver.bind(this) );
     },
@@ -17,5 +18,6 @@ module.exports = Fire.Class({
         this.runAction(action);
 
         this.scoreText.string = event.getUserData();
+        this.release();
     }
 });

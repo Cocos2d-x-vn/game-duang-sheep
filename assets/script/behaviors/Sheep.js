@@ -66,8 +66,6 @@ Fire.Class({
             event: cc.EventListener.TOUCH_ALL_AT_ONCE,
             onTouchesBegan: this.onTouchesBegan.bind(this)
         }, this);
-
-        // this._initAnimation();
     },
 
     update: function (dt) {

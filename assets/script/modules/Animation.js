@@ -35,9 +35,13 @@ var animData = [
 
 var sheepAnims = [];
 var initAnimation = function() {
+    if (sheepAnims.length > 0) return;
+
     for (var i = 0; i < animData.length; ++i) {
         var info = animData[i];
-        sheepAnims[i] = Effect.createAnimation(info.name, info.count, info.startIdx, info.delay);
+        var animation = Effect.createAnimation(info.name, info.count, info.startIdx, info.delay);
+        animation.retain();
+        sheepAnims[i] = animation;
     }
 };
 
