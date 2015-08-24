@@ -63,7 +63,7 @@ Fire.Class({
         // 分数
         this.score = 0;
         this.scoreText.string = 0;
-        cc.view.setDesignResolutionSize(900, 640, cc.ResolutionPolicy.SHOW_ALL);
+        cc.view.setResolutionPolicy(cc.ResolutionPolicy.SHOW_ALL);
     },
 
     update: function (dt) {
